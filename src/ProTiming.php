@@ -60,6 +60,10 @@ class ProTiming
 
     private function save()
     {
+        if (!file_exists(getcwd() . DIRECTORY_SEPARATOR . 'out')){
+            mkdir(getcwd() . DIRECTORY_SEPARATOR . 'out');
+        }
+
         $fp = fopen(getcwd() . DIRECTORY_SEPARATOR . 'out' . DIRECTORY_SEPARATOR .$this->fileName, 'w');
         foreach ($this->results as $result) {
             fputcsv($fp, $result, ';');
