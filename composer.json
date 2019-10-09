@@ -1,0 +1,12 @@
+{
+    "require": {
+        "fabpot/goutte": "^3.2",
+        "jbroadway/urlify": "^1.1"
+    },
+    "autoload": {
+        "psr-4" : {"App\\" : "src"}
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^4.3"
+    }
+}
