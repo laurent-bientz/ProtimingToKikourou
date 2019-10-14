@@ -34,7 +34,16 @@ class ProTiming
         5 => 3, // category
     ];
 
-    private $results = [];
+    private $results = [
+        [
+            'rank',
+            'time',
+            'name',
+            'category',
+            'sex',
+            'club',
+        ]
+    ];
 
     public function __construct(string $url)
     {
@@ -66,7 +75,7 @@ class ProTiming
 
         $fp = fopen(getcwd() . DIRECTORY_SEPARATOR . 'out' . DIRECTORY_SEPARATOR .$this->fileName, 'w');
         foreach ($this->results as $result) {
-            fputcsv($fp, $result, ';');
+            fputcsv($fp, $result, ';', '"');
         }
         fclose($fp);
     }
